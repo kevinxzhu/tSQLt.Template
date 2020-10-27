@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Test.FinanceApp</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{0798b37d-e3e4-4aa7-953e-8b2bb667341f}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Test.FinanceApp</RootNamespace>
+    <AssemblyName>Test.FinanceApp</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="TestFinancialApp" />
+    <Folder Include="TestFinancialApp\Stored Procedures" />
+    <Folder Include="AcceleratorTests\" />
+    <Folder Include="AcceleratorTests\Stored Procedures\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="testFinancialApp\Stored Procedures\test dbo.PurgeTable rejects not existing table.sql" />
+    <Build Include="testFinancialApp\Stored Procedures\test that ConvertCurrency converts using given conversion rate.sql" />
+    <Build Include="AcceleratorTests\Stored Procedures\test a particle is included only if it fits inside the boundaries of the rectangle.sql" />
+    <Build Include="AcceleratorTests\Stored Procedures\test a particle within the rectangle is returned.sql" />
+    <Build Include="AcceleratorTests\Stored Procedures\test a particle within the rectangle is returned with an Id, Point Location and Value.sql" />
+    <Build Include="AcceleratorTests\Stored Procedures\test email is not sent if we detected something other than higgs-boson.sql" />
+    <Build Include="AcceleratorTests\Stored Procedures\test email is sent if we detected a higgs-boson.sql" />
+    <Build Include="AcceleratorTests\Stored Procedures\test no particles are in a rectangle when there are no particles in the table.sql" />
+    <Build Include="AcceleratorTests\Stored Procedures\test ready for experimentation if 2 particles.sql" />
+    <Build Include="AcceleratorTests\Stored Procedures\test status message includes the number of particles.sql" />
+    <Build Include="AcceleratorTests\Stored Procedures\test we are not ready for experimentation if there is only 1 particle.sql" />
+    <Build Include="testFinancialApp\Stored Procedures\test that ConvertCurrencyUsingLookup converts using conversion rate in CurrencyConversion table.sql" />
+    <Build Include="testFinancialApp\Stored Procedures\test that Report gets sales data with converted currency.sql" />
+    <Build Include="testFinancialApp\Stored Procedures\test that SalesReport calls CurrentReport when @showHistory = 0.sql" />
+    <Build Include="testFinancialApp\Stored Procedures\test that SalesReport calls HistoricalReport instead of CurrentReport when @showHistory = 1.sql" />
+    <Build Include="AcceleratorTests\Stored Procedures\test foreign key is not violated if Particle color is in Color table.sql" />
+    <Build Include="AcceleratorTests\Stored Procedures\test foreign key violated if Particle color is not in Color table.sql" />
+    <Build Include="testFinancialApp\Stored Procedures\test that CurrencyConversion table does not allow invalid user id.sql" />
+    <Build Include="testFinancialApp\Stored Procedures\test that Sales table does not allow invalid currency.sql" />
+    <Build Include="Security\AcceleratorTests.sql" />
+    <Build Include="Security\TestFinancialApp.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Test.FinanceApp.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+  </ItemGroup>
+</Project>

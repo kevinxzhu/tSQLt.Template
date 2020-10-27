@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>FinanceApp</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{7d62822f-6627-4ef9-96ea-1ae33390c3c5}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>FinanceApp</RootNamespace>
+    <AssemblyName>FinanceApp</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Accelerator\" />
+    <Folder Include="Accelerator\Tables\" />
+    <Folder Include="FinancialApp\" />
+    <Folder Include="FinancialApp\Tables\" />
+    <Folder Include="Accelerator\Functions\" />
+    <Folder Include="FinancialApp\Functions\" />
+    <Folder Include="Accelerator\Stored Procedures\" />
+    <Folder Include="FinancialApp\Stored Procedures\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Accelerator\Tables\Particle.sql" />
+    <Build Include="Accelerator\Tables\Color.sql" />
+    <Build Include="FinancialApp\Tables\UserInfo.sql" />
+    <Build Include="FinancialApp\Tables\CurrencyConversion.sql" />
+    <Build Include="FinancialApp\Tables\Currency.sql" />
+    <Build Include="FinancialApp\Tables\Sales.sql" />
+    <Build Include="Accelerator\Functions\GetStatusMessage.sql" />
+    <Build Include="Accelerator\Functions\IsExperimentReady.sql" />
+    <Build Include="FinancialApp\Functions\ConvertCurrency.sql" />
+    <Build Include="Accelerator\Functions\GetParticlesInRectangle.sql" />
+    <Build Include="FinancialApp\Functions\ConvertCurrencyUsingLookup.sql" />
+    <Build Include="FinancialApp\Functions\Report.sql" />
+    <Build Include="Accelerator\Stored Procedures\SendHiggsBosonDiscoveryEmail.sql" />
+    <Build Include="FinancialApp\Stored Procedures\CurrentReport.sql" />
+    <Build Include="FinancialApp\Stored Procedures\HistoricalReport.sql" />
+    <Build Include="Accelerator\Stored Procedures\AlertParticleDiscovered.sql" />
+    <Build Include="FinancialApp\Stored Procedures\SalesReport.sql" />
+    <Build Include="Security\Accelerator.sql" />
+    <Build Include="Security\FinancialApp.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FinanceApp.publish.xml" />
+  </ItemGroup>
+</Project>

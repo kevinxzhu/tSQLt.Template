@@ -1,0 +1,90 @@
+<testsuites>
+	<testsuite id="1"
+         		name="AcceleratorTests"
+         		tests="11"
+         		errors="0"
+         		failures="1"
+         		skipped="0"
+         		timestamp="2020-10-27T14:47:44"
+         		time="0.306"
+         		hostname="KZHOME\LOCALDB#07751CF9"
+         		package="tSQLt">
+		<properties/>
+		<testcase classname="AcceleratorTests"
+        			name="test a particle is included only if it fits inside the boundaries of the rectangle"
+        			time="0.033" />
+		<testcase classname="AcceleratorTests"
+        			name="test a particle within the rectangle is returned"
+        			time="0.023" />
+		<testcase classname="AcceleratorTests"
+        			name="test a particle within the rectangle is returned with an Id, Point Location and Value"
+        			time="0.030" />
+		<testcase classname="AcceleratorTests"
+        			name="test email is not sent if we detected something other than higgs-boson"
+        			time="0.017" />
+		<testcase classname="AcceleratorTests"
+        			name="test email is sent if we detected a higgs-boson"
+        			time="0.023" />
+		<testcase classname="AcceleratorTests"
+        			name="test foreign key is not violated if Particle color is in Color table"
+        			time="0.070" />
+		<testcase classname="AcceleratorTests"
+        			name="test foreign key violated if Particle color is not in Color table"
+        			time="0.020" />
+		<testcase classname="AcceleratorTests"
+        			name="test no particles are in a rectangle when there are no particles in the table"
+        			time="0.010" />
+		<testcase classname="AcceleratorTests"
+        			name="test ready for experimentation if 2 particles"
+        			time="0.010">
+			<failure message="Expected: &lt;1&gt; but was: &lt;0&gt;"
+       				type="tSQLt.Fail" />
+		</testcase>
+		<testcase classname="AcceleratorTests"
+        			name="test status message includes the number of particles"
+        			time="0.010" />
+		<testcase classname="AcceleratorTests"
+        			name="test we are not ready for experimentation if there is only 1 particle"
+        			time="0.010" />
+		<system-out/>
+		<system-err/>
+	</testsuite>
+	<testsuite id="2"
+         		name="testFinancialApp"
+         		tests="8"
+         		errors="0"
+         		failures="0"
+         		skipped="0"
+         		timestamp="2020-10-27T14:47:44"
+         		time="0.193"
+         		hostname="KZHOME\LOCALDB#07751CF9"
+         		package="tSQLt">
+		<properties/>
+		<testcase classname="testFinancialApp"
+        			name="test dbo.PurgeTable rejects not existing table"
+        			time="0.003" />
+		<testcase classname="testFinancialApp"
+        			name="test that ConvertCurrency converts using given conversion rate"
+        			time="0.004" />
+		<testcase classname="testFinancialApp"
+        			name="test that ConvertCurrencyUsingLookup converts using conversion rate in CurrencyConversion table"
+        			time="0.010" />
+		<testcase classname="testFinancialApp"
+        			name="test that CurrencyConversion table does not allow invalid user id"
+        			time="0.013" />
+		<testcase classname="testFinancialApp"
+        			name="test that Report gets sales data with converted currency"
+        			time="0.054" />
+		<testcase classname="testFinancialApp"
+        			name="test that Sales table does not allow invalid currency"
+        			time="0.013" />
+		<testcase classname="testFinancialApp"
+        			name="test that SalesReport calls CurrentReport when @showHistory = 0"
+        			time="0.030" />
+		<testcase classname="testFinancialApp"
+        			name="test that SalesReport calls HistoricalReport instead of CurrentReport when @showHistory = 1"
+        			time="0.027" />
+		<system-out/>
+		<system-err/>
+	</testsuite>
+</testsuites>
