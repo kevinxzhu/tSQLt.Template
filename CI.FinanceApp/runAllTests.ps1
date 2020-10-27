@@ -11,7 +11,7 @@ $dataset = New-Object System.Data.DataSet
 $adapter.Fill($dataSet) | Out-Null
 
 $connection.Close()
-#$currentPath = Join-Path (Get-Item .).FullName "/testresults.xml"
+# $currentPath = Join-Path (Get-Item .).FullName "/testresults.xml"
 $currentPath = (Get-Item .).FullName + "/testresults.xml"
 Write-Output $currentPath
 $dataSet.Tables[0].Rows[0].ItemArray[0] | Out-File $currentPath
